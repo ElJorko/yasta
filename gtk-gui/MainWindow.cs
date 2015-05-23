@@ -8,6 +8,8 @@ public partial class MainWindow
 	private global::Gtk.Action SaveConfigAction;
 	private global::Gtk.Action FileAction1;
 	private global::Gtk.Action SaveConfigAction1;
+	private global::Gtk.Action HelpAction;
+	private global::Gtk.Action aboutAction;
 	private global::Gtk.VBox vbox1;
 	private global::Gtk.MenuBar menubar2;
 	private global::Gtk.VBox vbox2;
@@ -49,6 +51,12 @@ public partial class MainWindow
 		this.SaveConfigAction1 = new global::Gtk.Action ("SaveConfigAction1", global::Mono.Unix.Catalog.GetString ("Save Config"), null, null);
 		this.SaveConfigAction1.ShortLabel = global::Mono.Unix.Catalog.GetString ("Save Config");
 		w1.Add (this.SaveConfigAction1, null);
+		this.HelpAction = new global::Gtk.Action ("HelpAction", global::Mono.Unix.Catalog.GetString ("_Help"), null, null);
+		this.HelpAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Help");
+		w1.Add (this.HelpAction, null);
+		this.aboutAction = new global::Gtk.Action ("aboutAction", global::Mono.Unix.Catalog.GetString ("_About"), null, "gtk-about");
+		this.aboutAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_About");
+		w1.Add (this.aboutAction, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -56,9 +64,10 @@ public partial class MainWindow
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.vbox1 = new global::Gtk.VBox ();
+		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='FileAction1' action='FileAction1'><menuitem name='SaveConfigAction1' action='SaveConfigAction1'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='FileAction1' action='FileAction1'><menuitem name='SaveConfigAction1' action='SaveConfigAction1'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='aboutAction' action='aboutAction'/></menu></menubar></ui>");
 		this.menubar2 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar2")));
 		this.menubar2.Name = "menubar2";
 		this.vbox1.Add (this.menubar2);
@@ -270,6 +279,7 @@ public partial class MainWindow
 		this.DefaultHeight = 524;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
+		this.aboutAction.Activated += new global::System.EventHandler (this.OnAbout);
 		this.workTimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.WorkTimeInputFieldCallback);
 		this.lunchTimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.LunchTimeInputFieldCallback);
 		this.coffee1TimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.Coffee1TimeInputFieldCallback);

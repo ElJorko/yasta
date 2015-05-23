@@ -160,4 +160,24 @@ public partial class MainWindow: Gtk.Window
 		UpdateTimeText ();
 		UpdateETF ();
 	}
+
+	protected void OnAbout (object sender, System.EventArgs e)
+	{
+		string[] authors = { "ElJorko" };
+		string license = "TBD";
+		
+		AboutDialog dialog = new AboutDialog();
+		
+		dialog.ProgramName = "Yasta";
+		dialog.Version = "0.1";
+		dialog.Authors = authors;
+		dialog.Copyright = "(C) 2015";
+		dialog.License = license;
+		
+		dialog.TransientFor = this;
+		
+		dialog.Run();
+		
+		dialog.Destroy();
+	}
 }

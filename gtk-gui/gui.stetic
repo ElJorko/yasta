@@ -29,6 +29,18 @@
         <property name="Label" translatable="yes">Save Config</property>
         <property name="ShortLabel" translatable="yes">Save Config</property>
       </action>
+      <action id="HelpAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Help</property>
+        <property name="ShortLabel" translatable="yes">_Help</property>
+      </action>
+      <action id="aboutAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_About</property>
+        <property name="ShortLabel" translatable="yes">_About</property>
+        <property name="StockId">gtk-about</property>
+        <signal name="Activated" handler="OnAbout" />
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">Yasta</property>
@@ -41,9 +53,12 @@
         <child>
           <widget class="Gtk.MenuBar" id="menubar2">
             <property name="MemberName" />
-            <node name="__gtksharp_142_Stetic_Editor_ActionMenuBar" type="Menubar">
+            <node name="menubar2" type="Menubar">
               <node type="Menu" action="FileAction1">
                 <node type="Menuitem" action="SaveConfigAction1" />
+              </node>
+              <node type="Menu" action="HelpAction">
+                <node type="Menuitem" action="aboutAction" />
               </node>
             </node>
           </widget>
