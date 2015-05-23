@@ -10,6 +10,7 @@ public partial class MainWindow
 	private global::Gtk.Action SaveConfigAction1;
 	private global::Gtk.VBox vbox1;
 	private global::Gtk.MenuBar menubar2;
+	private global::Gtk.VBox vbox2;
 	private global::Gtk.Label timeText;
 	private global::Gtk.Label etfText;
 	private global::Gtk.HBox hbox3;
@@ -28,7 +29,6 @@ public partial class MainWindow
 	private global::Gtk.HSeparator hseparator5;
 	private global::Gtk.Label label10;
 	private global::Gtk.Entry startupTimeInputFieldText;
-	private global::Gtk.Alignment alignment1;
 	private global::Gtk.Button startStopButton;
 	
 	protected virtual void Build ()
@@ -56,9 +56,7 @@ public partial class MainWindow
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.vbox1 = new global::Gtk.VBox ();
-		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
-		this.vbox1.BorderWidth = ((uint)(9));
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='FileAction1' action='FileAction1'><menuitem name='SaveConfigAction1' action='SaveConfigAction1'/></menu></menubar></ui>");
 		this.menubar2 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar2")));
@@ -69,26 +67,29 @@ public partial class MainWindow
 		w2.Expand = false;
 		w2.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
+		this.vbox2 = new global::Gtk.VBox ();
+		this.vbox2.Name = "vbox2";
+		this.vbox2.Spacing = 6;
+		this.vbox2.BorderWidth = ((uint)(6));
+		// Container child vbox2.Gtk.Box+BoxChild
 		this.timeText = new global::Gtk.Label ();
 		this.timeText.Name = "timeText";
 		this.timeText.LabelProp = global::Mono.Unix.Catalog.GetString ("00:00:00");
-		this.vbox1.Add (this.timeText);
-		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.timeText]));
-		w3.Position = 1;
+		this.vbox2.Add (this.timeText);
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.timeText]));
+		w3.Position = 0;
 		w3.Expand = false;
 		w3.Fill = false;
-		w3.Padding = ((uint)(2));
-		// Container child vbox1.Gtk.Box+BoxChild
+		// Container child vbox2.Gtk.Box+BoxChild
 		this.etfText = new global::Gtk.Label ();
 		this.etfText.Name = "etfText";
 		this.etfText.LabelProp = global::Mono.Unix.Catalog.GetString ("ETF: 00:00:00");
-		this.vbox1.Add (this.etfText);
-		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.etfText]));
-		w4.Position = 2;
+		this.vbox2.Add (this.etfText);
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.etfText]));
+		w4.Position = 1;
 		w4.Expand = false;
 		w4.Fill = false;
-		w4.Padding = ((uint)(2));
-		// Container child vbox1.Gtk.Box+BoxChild
+		// Container child vbox2.Gtk.Box+BoxChild
 		this.hbox3 = new global::Gtk.HBox ();
 		this.hbox3.Name = "hbox3";
 		this.hbox3.Spacing = 6;
@@ -242,36 +243,31 @@ public partial class MainWindow
 		w19.Position = 0;
 		w19.Expand = false;
 		w19.Fill = false;
-		this.vbox1.Add (this.hbox3);
-		global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox3]));
-		w20.Position = 3;
+		this.vbox2.Add (this.hbox3);
+		global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox3]));
+		w20.Position = 2;
 		w20.Expand = false;
 		w20.Fill = false;
-		// Container child vbox1.Gtk.Box+BoxChild
-		this.alignment1 = new global::Gtk.Alignment (0.5F, 0.5F, 1F, 1F);
-		this.alignment1.Name = "alignment1";
-		this.alignment1.LeftPadding = ((uint)(100));
-		this.alignment1.RightPadding = ((uint)(100));
-		this.alignment1.BottomPadding = ((uint)(10));
-		// Container child alignment1.Gtk.Container+ContainerChild
+		// Container child vbox2.Gtk.Box+BoxChild
 		this.startStopButton = new global::Gtk.Button ();
 		this.startStopButton.CanFocus = true;
 		this.startStopButton.Name = "startStopButton";
 		this.startStopButton.UseUnderline = true;
 		this.startStopButton.Label = global::Mono.Unix.Catalog.GetString ("StartStopButton");
-		this.alignment1.Add (this.startStopButton);
-		this.vbox1.Add (this.alignment1);
-		global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.alignment1]));
-		w22.PackType = ((global::Gtk.PackType)(1));
-		w22.Position = 4;
-		w22.Expand = false;
-		w22.Fill = false;
+		this.vbox2.Add (this.startStopButton);
+		global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.startStopButton]));
+		w21.Position = 3;
+		w21.Expand = false;
+		w21.Fill = false;
+		this.vbox1.Add (this.vbox2);
+		global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.vbox2]));
+		w22.Position = 1;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 441;
-		this.DefaultHeight = 452;
+		this.DefaultWidth = 252;
+		this.DefaultHeight = 524;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.workTimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.WorkTimeInputFieldCallback);
