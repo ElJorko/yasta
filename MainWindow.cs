@@ -1,6 +1,8 @@
 using System;
 using Gtk;
 
+using Yasta;
+
 public partial class MainWindow: Gtk.Window
 {	
 
@@ -178,6 +180,16 @@ public partial class MainWindow: Gtk.Window
 		
 		dialog.Run();
 		
+		dialog.Destroy();
+	}
+	protected void OnWorkingHoursPlan (object sender, System.EventArgs e)
+	{
+		WorkingHoursPlanDialog dialog = new WorkingHoursPlanDialog();
+
+		dialog.TransientFor = this;
+
+		dialog.Run();
+
 		dialog.Destroy();
 	}
 }

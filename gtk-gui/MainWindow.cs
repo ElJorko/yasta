@@ -4,31 +4,61 @@
 public partial class MainWindow
 {
 	private global::Gtk.UIManager UIManager;
-	private global::Gtk.Action FileAction;
-	private global::Gtk.Action SaveConfigAction;
-	private global::Gtk.Action FileAction1;
-	private global::Gtk.Action SaveConfigAction1;
-	private global::Gtk.Action HelpAction;
-	private global::Gtk.Action aboutAction;
-	private global::Gtk.VBox vbox1;
-	private global::Gtk.MenuBar menubar2;
-	private global::Gtk.VBox vbox2;
-	private global::Gtk.VBox vbox3;
-	private global::Gtk.Label timeText;
-	private global::Gtk.Label etfText;
-	private global::Gtk.Table table1;
-	private global::Gtk.Entry coffee1TimeInputFieldText;
-	private global::Gtk.Entry coffee2TimeInputFieldText;
-	private global::Gtk.Label label10;
-	private global::Gtk.Label label6;
-	private global::Gtk.Label label7;
-	private global::Gtk.Label label8;
-	private global::Gtk.Label label9;
-	private global::Gtk.Entry lunchTimeInputFieldText;
-	private global::Gtk.Entry startupTimeInputFieldText;
-	private global::Gtk.Entry workTimeInputFieldText;
-	private global::Gtk.Button startStopButton;
 	
+	private global::Gtk.Action FileAction;
+	
+	private global::Gtk.Action SaveConfigAction;
+	
+	private global::Gtk.Action FileAction1;
+	
+	private global::Gtk.Action SaveConfigAction1;
+	
+	private global::Gtk.Action HelpAction;
+	
+	private global::Gtk.Action aboutAction;
+	
+	private global::Gtk.Action EditAction;
+	
+	private global::Gtk.Action WorkingHoursPlanAction;
+	
+	private global::Gtk.Action WorkingHoursPlanAction1;
+	
+	private global::Gtk.VBox vbox1;
+	
+	private global::Gtk.MenuBar menubar2;
+	
+	private global::Gtk.VBox vbox2;
+	
+	private global::Gtk.VBox vbox3;
+	
+	private global::Gtk.Label timeText;
+	
+	private global::Gtk.Label etfText;
+	
+	private global::Gtk.Table table1;
+	
+	private global::Gtk.Entry coffee1TimeInputFieldText;
+	
+	private global::Gtk.Entry coffee2TimeInputFieldText;
+	
+	private global::Gtk.Label label10;
+	
+	private global::Gtk.Label label6;
+	
+	private global::Gtk.Label label7;
+	
+	private global::Gtk.Label label8;
+	
+	private global::Gtk.Label label9;
+	
+	private global::Gtk.Entry lunchTimeInputFieldText;
+	
+	private global::Gtk.Entry startupTimeInputFieldText;
+	
+	private global::Gtk.Entry workTimeInputFieldText;
+	
+	private global::Gtk.Button startStopButton;
+
 	protected virtual void Build ()
 	{
 		global::Stetic.Gui.Initialize (this);
@@ -53,6 +83,15 @@ public partial class MainWindow
 		this.aboutAction = new global::Gtk.Action ("aboutAction", global::Mono.Unix.Catalog.GetString ("_About"), null, "gtk-about");
 		this.aboutAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_About");
 		w1.Add (this.aboutAction, null);
+		this.EditAction = new global::Gtk.Action ("EditAction", global::Mono.Unix.Catalog.GetString ("_Edit"), null, null);
+		this.EditAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Edit");
+		w1.Add (this.EditAction, null);
+		this.WorkingHoursPlanAction = new global::Gtk.Action ("WorkingHoursPlanAction", global::Mono.Unix.Catalog.GetString ("Working Hours Plan..."), null, null);
+		this.WorkingHoursPlanAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Working Hours Plan...");
+		w1.Add (this.WorkingHoursPlanAction, null);
+		this.WorkingHoursPlanAction1 = new global::Gtk.Action ("WorkingHoursPlanAction1", global::Mono.Unix.Catalog.GetString ("Working Hours Plan..."), null, null);
+		this.WorkingHoursPlanAction1.ShortLabel = global::Mono.Unix.Catalog.GetString ("Working Hours Plan...");
+		w1.Add (this.WorkingHoursPlanAction1, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -64,7 +103,7 @@ public partial class MainWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='FileAction1' action='FileAction1'><menuitem name='SaveConfigAction1' action='SaveConfigAction1'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='aboutAction' action='aboutAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='FileAction1' action='FileAction1'><menuitem name='SaveConfigAction1' action='SaveConfigAction1'/></menu><menu name='EditAction' action='EditAction'><menuitem name='WorkingHoursPlanAction1' action='WorkingHoursPlanAction1'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='aboutAction' action='aboutAction'/></menu></menubar></ui>");
 		this.menubar2 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar2")));
 		this.menubar2.Name = "menubar2";
 		this.vbox1.Add (this.menubar2);
@@ -249,11 +288,13 @@ public partial class MainWindow
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 388;
-		this.DefaultHeight = 351;
+		this.DefaultWidth = 424;
+		this.DefaultHeight = 358;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.aboutAction.Activated += new global::System.EventHandler (this.OnAbout);
+		this.WorkingHoursPlanAction.Activated += new global::System.EventHandler (this.OnWorkingHoursPlan);
+		this.WorkingHoursPlanAction1.Activated += new global::System.EventHandler (this.OnWorkingHoursPlan);
 		this.workTimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.WorkTimeInputFieldCallback);
 		this.startupTimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.StartupTimeInputFieldCallback);
 		this.lunchTimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.LunchTimeInputFieldCallback);
