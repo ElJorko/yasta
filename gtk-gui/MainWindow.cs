@@ -179,6 +179,7 @@ public partial class MainWindow
 		w7.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child table1.Gtk.Table+TableChild
 		this.label10 = new global::Gtk.Label ();
+		this.label10.WidthRequest = 250;
 		this.label10.Name = "label10";
 		this.label10.Xalign = 1F;
 		this.label10.LabelProp = global::Mono.Unix.Catalog.GetString ("Startup time (minutes)");

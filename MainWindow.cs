@@ -34,6 +34,7 @@ public partial class MainWindow: Gtk.Window
 		UpdateTimeText ();
 		UpdateETF ();
 		StartClock ();
+
 	}
 	
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
