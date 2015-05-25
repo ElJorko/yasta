@@ -1,6 +1,8 @@
 using System;
 using Gtk;
 
+using Yasta;
+
 public partial class MainWindow: Gtk.Window
 {	
 
@@ -160,5 +162,35 @@ public partial class MainWindow: Gtk.Window
 		timeLeft = timeLeft + (int)  (newTime - oldTime);
 		UpdateTimeText ();
 		UpdateETF ();
+	}
+
+	protected void OnAbout (object sender, System.EventArgs e)
+	{
+		string[] authors = { "ElJorko" };
+		string license = "TBD";
+		
+		AboutDialog dialog = new AboutDialog();
+		
+		dialog.ProgramName = "Yasta";
+		dialog.Version = "0.1";
+		dialog.Authors = authors;
+		dialog.Copyright = "(C) 2015";
+		dialog.License = license;
+		
+		dialog.TransientFor = this;
+		
+		dialog.Run();
+		
+		dialog.Destroy();
+	}
+	protected void OnWorkingHoursPlan (object sender, System.EventArgs e)
+	{
+		WorkingHoursPlanDialog dialog = new WorkingHoursPlanDialog();
+
+		dialog.TransientFor = this;
+
+		dialog.Run();
+
+		dialog.Destroy();
 	}
 }

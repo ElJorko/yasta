@@ -4,38 +4,61 @@
 public partial class MainWindow
 {
 	private global::Gtk.UIManager UIManager;
-	private global::Gtk.Action FileAction;
-	private global::Gtk.Action SaveConfigAction;
-	private global::Gtk.Action FileAction1;
-	private global::Gtk.Action SaveConfigAction1;
-	private global::Gtk.VBox vbox1;
-	private global::Gtk.MenuBar menubar2;
-	private global::Gtk.Label timeText;
-	private global::Gtk.Label etfText;
-	private global::Gtk.HBox hbox3;
-	private global::Gtk.VBox vbox3;
-	private global::Gtk.HBox hbox1;
-	private global::Gtk.Label label6;
-	private global::Gtk.Entry workTimeInputFieldText;
-	private global::Gtk.HSeparator hseparator3;
-	private global::Gtk.HBox hbox2;
-	private global::Gtk.Label label7;
-	private global::Gtk.Entry lunchTimeInputFieldText;
-	private global::Gtk.HSeparator hseparator4;
-	private global::Gtk.HBox hbox4;
-	private global::Gtk.Label label8;
-	private global::Gtk.Entry coffee1TimeInputFieldText;
-	private global::Gtk.HSeparator hseparator5;
-	private global::Gtk.HBox hbox5;
-	private global::Gtk.Label label9;
-	private global::Gtk.Entry coffee2TimeInputFieldText;
-	private global::Gtk.HSeparator hseparator1;
-	private global::Gtk.HBox hbox6;
-	private global::Gtk.Label label10;
-	private global::Gtk.Entry startupTimeInputFieldText;
-	private global::Gtk.Alignment alignment1;
-	private global::Gtk.Button startStopButton;
 	
+	private global::Gtk.Action FileAction;
+	
+	private global::Gtk.Action SaveConfigAction;
+	
+	private global::Gtk.Action FileAction1;
+	
+	private global::Gtk.Action SaveConfigAction1;
+	
+	private global::Gtk.Action HelpAction;
+	
+	private global::Gtk.Action aboutAction;
+	
+	private global::Gtk.Action EditAction;
+	
+	private global::Gtk.Action WorkingHoursPlanAction;
+	
+	private global::Gtk.Action WorkingHoursPlanAction1;
+	
+	private global::Gtk.VBox vbox1;
+	
+	private global::Gtk.MenuBar menubar2;
+	
+	private global::Gtk.VBox vbox2;
+	
+	private global::Gtk.VBox vbox3;
+	
+	private global::Gtk.Label timeText;
+	
+	private global::Gtk.Label etfText;
+	
+	private global::Gtk.Table table1;
+	
+	private global::Gtk.Entry coffee1TimeInputFieldText;
+	
+	private global::Gtk.Entry coffee2TimeInputFieldText;
+	
+	private global::Gtk.Label label10;
+	
+	private global::Gtk.Label label6;
+	
+	private global::Gtk.Label label7;
+	
+	private global::Gtk.Label label8;
+	
+	private global::Gtk.Label label9;
+	
+	private global::Gtk.Entry lunchTimeInputFieldText;
+	
+	private global::Gtk.Entry startupTimeInputFieldText;
+	
+	private global::Gtk.Entry workTimeInputFieldText;
+	
+	private global::Gtk.Button startStopButton;
+
 	protected virtual void Build ()
 	{
 		global::Stetic.Gui.Initialize (this);
@@ -54,18 +77,33 @@ public partial class MainWindow
 		this.SaveConfigAction1 = new global::Gtk.Action ("SaveConfigAction1", global::Mono.Unix.Catalog.GetString ("Save Config"), null, null);
 		this.SaveConfigAction1.ShortLabel = global::Mono.Unix.Catalog.GetString ("Save Config");
 		w1.Add (this.SaveConfigAction1, null);
+		this.HelpAction = new global::Gtk.Action ("HelpAction", global::Mono.Unix.Catalog.GetString ("_Help"), null, null);
+		this.HelpAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Help");
+		w1.Add (this.HelpAction, null);
+		this.aboutAction = new global::Gtk.Action ("aboutAction", global::Mono.Unix.Catalog.GetString ("_About"), null, "gtk-about");
+		this.aboutAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_About");
+		w1.Add (this.aboutAction, null);
+		this.EditAction = new global::Gtk.Action ("EditAction", global::Mono.Unix.Catalog.GetString ("_Edit"), null, null);
+		this.EditAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Edit");
+		w1.Add (this.EditAction, null);
+		this.WorkingHoursPlanAction = new global::Gtk.Action ("WorkingHoursPlanAction", global::Mono.Unix.Catalog.GetString ("Working Hours Plan..."), null, null);
+		this.WorkingHoursPlanAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Working Hours Plan...");
+		w1.Add (this.WorkingHoursPlanAction, null);
+		this.WorkingHoursPlanAction1 = new global::Gtk.Action ("WorkingHoursPlanAction1", global::Mono.Unix.Catalog.GetString ("Working Hours Plan..."), null, null);
+		this.WorkingHoursPlanAction1.ShortLabel = global::Mono.Unix.Catalog.GetString ("Working Hours Plan...");
+		w1.Add (this.WorkingHoursPlanAction1, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
-		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
+		this.Title = global::Mono.Unix.Catalog.GetString ("Yasta");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+		this.Resizable = false;
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.vbox1 = new global::Gtk.VBox ();
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
-		this.vbox1.BorderWidth = ((uint)(9));
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='FileAction1' action='FileAction1'><menuitem name='SaveConfigAction1' action='SaveConfigAction1'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='FileAction1' action='FileAction1'><menuitem name='SaveConfigAction1' action='SaveConfigAction1'/></menu><menu name='EditAction' action='EditAction'><menuitem name='WorkingHoursPlanAction1' action='WorkingHoursPlanAction1'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='aboutAction' action='aboutAction'/></menu></menubar></ui>");
 		this.menubar2 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar2")));
 		this.menubar2.Name = "menubar2";
 		this.vbox1.Add (this.menubar2);
@@ -74,251 +112,194 @@ public partial class MainWindow
 		w2.Expand = false;
 		w2.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.timeText = new global::Gtk.Label ();
-		this.timeText.Name = "timeText";
-		this.timeText.LabelProp = global::Mono.Unix.Catalog.GetString ("00:00:00");
-		this.vbox1.Add (this.timeText);
-		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.timeText]));
-		w3.Position = 1;
-		w3.Expand = false;
-		w3.Fill = false;
-		w3.Padding = ((uint)(2));
-		// Container child vbox1.Gtk.Box+BoxChild
-		this.etfText = new global::Gtk.Label ();
-		this.etfText.Name = "etfText";
-		this.etfText.LabelProp = global::Mono.Unix.Catalog.GetString ("ETF: 00:00:00");
-		this.vbox1.Add (this.etfText);
-		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.etfText]));
-		w4.Position = 2;
-		w4.Expand = false;
-		w4.Fill = false;
-		w4.Padding = ((uint)(2));
-		// Container child vbox1.Gtk.Box+BoxChild
-		this.hbox3 = new global::Gtk.HBox ();
-		this.hbox3.Name = "hbox3";
-		this.hbox3.Spacing = 6;
-		this.hbox3.BorderWidth = ((uint)(15));
-		// Container child hbox3.Gtk.Box+BoxChild
+		this.vbox2 = new global::Gtk.VBox ();
+		this.vbox2.Name = "vbox2";
+		this.vbox2.Spacing = 18;
+		this.vbox2.BorderWidth = ((uint)(6));
+		// Container child vbox2.Gtk.Box+BoxChild
 		this.vbox3 = new global::Gtk.VBox ();
 		this.vbox3.Name = "vbox3";
 		this.vbox3.Spacing = 6;
 		// Container child vbox3.Gtk.Box+BoxChild
-		this.hbox1 = new global::Gtk.HBox ();
-		this.hbox1.Name = "hbox1";
-		this.hbox1.Spacing = 6;
-		// Container child hbox1.Gtk.Box+BoxChild
-		this.label6 = new global::Gtk.Label ();
-		this.label6.WidthRequest = 250;
-		this.label6.Name = "label6";
-		this.label6.LabelProp = global::Mono.Unix.Catalog.GetString ("Working hours");
-		this.label6.Justify = ((global::Gtk.Justification)(2));
-		this.hbox1.Add (this.label6);
-		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.label6]));
+		this.timeText = new global::Gtk.Label ();
+		this.timeText.Name = "timeText";
+		this.timeText.LabelProp = global::Mono.Unix.Catalog.GetString ("00:00:00");
+		this.vbox3.Add (this.timeText);
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.timeText]));
+		w3.Position = 0;
+		w3.Expand = false;
+		w3.Fill = false;
+		// Container child vbox3.Gtk.Box+BoxChild
+		this.etfText = new global::Gtk.Label ();
+		this.etfText.Name = "etfText";
+		this.etfText.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>ETF: 00:00:00</b>");
+		this.etfText.UseMarkup = true;
+		this.vbox3.Add (this.etfText);
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.etfText]));
+		w4.Position = 1;
+		w4.Expand = false;
+		w4.Fill = false;
+		this.vbox2.Add (this.vbox3);
+		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.vbox3]));
 		w5.Position = 0;
 		w5.Expand = false;
 		w5.Fill = false;
-		// Container child hbox1.Gtk.Box+BoxChild
-		this.workTimeInputFieldText = new global::Gtk.Entry ();
-		this.workTimeInputFieldText.CanFocus = true;
-		this.workTimeInputFieldText.Name = "workTimeInputFieldText";
-		this.workTimeInputFieldText.Text = global::Mono.Unix.Catalog.GetString ("8,75");
-		this.workTimeInputFieldText.IsEditable = true;
-		this.workTimeInputFieldText.InvisibleChar = '●';
-		this.hbox1.Add (this.workTimeInputFieldText);
-		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.workTimeInputFieldText]));
-		w6.Position = 1;
-		this.vbox3.Add (this.hbox1);
-		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hbox1]));
-		w7.Position = 0;
-		w7.Expand = false;
-		w7.Fill = false;
-		// Container child vbox3.Gtk.Box+BoxChild
-		this.hseparator3 = new global::Gtk.HSeparator ();
-		this.hseparator3.Name = "hseparator3";
-		this.vbox3.Add (this.hseparator3);
-		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hseparator3]));
-		w8.Position = 1;
-		w8.Expand = false;
-		w8.Fill = false;
-		// Container child vbox3.Gtk.Box+BoxChild
-		this.hbox2 = new global::Gtk.HBox ();
-		this.hbox2.Name = "hbox2";
-		this.hbox2.Spacing = 6;
-		// Container child hbox2.Gtk.Box+BoxChild
-		this.label7 = new global::Gtk.Label ();
-		this.label7.WidthRequest = 250;
-		this.label7.Name = "label7";
-		this.label7.LabelProp = global::Mono.Unix.Catalog.GetString ("Lunch Time (minutes)");
-		this.hbox2.Add (this.label7);
-		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.label7]));
-		w9.Position = 0;
-		w9.Expand = false;
-		w9.Fill = false;
-		// Container child hbox2.Gtk.Box+BoxChild
-		this.lunchTimeInputFieldText = new global::Gtk.Entry ();
-		this.lunchTimeInputFieldText.CanFocus = true;
-		this.lunchTimeInputFieldText.Name = "lunchTimeInputFieldText";
-		this.lunchTimeInputFieldText.Text = global::Mono.Unix.Catalog.GetString ("45");
-		this.lunchTimeInputFieldText.IsEditable = true;
-		this.lunchTimeInputFieldText.InvisibleChar = '●';
-		this.hbox2.Add (this.lunchTimeInputFieldText);
-		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.lunchTimeInputFieldText]));
-		w10.Position = 1;
-		this.vbox3.Add (this.hbox2);
-		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hbox2]));
-		w11.Position = 2;
-		w11.Expand = false;
-		w11.Fill = false;
-		// Container child vbox3.Gtk.Box+BoxChild
-		this.hseparator4 = new global::Gtk.HSeparator ();
-		this.hseparator4.Name = "hseparator4";
-		this.vbox3.Add (this.hseparator4);
-		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hseparator4]));
-		w12.Position = 3;
-		w12.Expand = false;
-		w12.Fill = false;
-		// Container child vbox3.Gtk.Box+BoxChild
-		this.hbox4 = new global::Gtk.HBox ();
-		this.hbox4.Name = "hbox4";
-		this.hbox4.Spacing = 6;
-		// Container child hbox4.Gtk.Box+BoxChild
-		this.label8 = new global::Gtk.Label ();
-		this.label8.WidthRequest = 250;
-		this.label8.Name = "label8";
-		this.label8.LabelProp = global::Mono.Unix.Catalog.GetString ("Coffee 1 (minutes)");
-		this.hbox4.Add (this.label8);
-		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.label8]));
-		w13.Position = 0;
-		w13.Expand = false;
-		w13.Fill = false;
-		// Container child hbox4.Gtk.Box+BoxChild
+		// Container child vbox2.Gtk.Box+BoxChild
+		this.table1 = new global::Gtk.Table (((uint)(5)), ((uint)(2)), false);
+		this.table1.Name = "table1";
+		this.table1.RowSpacing = ((uint)(6));
+		this.table1.ColumnSpacing = ((uint)(6));
+		// Container child table1.Gtk.Table+TableChild
 		this.coffee1TimeInputFieldText = new global::Gtk.Entry ();
 		this.coffee1TimeInputFieldText.CanFocus = true;
 		this.coffee1TimeInputFieldText.Name = "coffee1TimeInputFieldText";
 		this.coffee1TimeInputFieldText.Text = global::Mono.Unix.Catalog.GetString ("10");
 		this.coffee1TimeInputFieldText.IsEditable = true;
 		this.coffee1TimeInputFieldText.InvisibleChar = '●';
-		this.hbox4.Add (this.coffee1TimeInputFieldText);
-		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.coffee1TimeInputFieldText]));
-		w14.Position = 1;
-		this.vbox3.Add (this.hbox4);
-		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hbox4]));
-		w15.Position = 4;
-		w15.Expand = false;
-		w15.Fill = false;
-		// Container child vbox3.Gtk.Box+BoxChild
-		this.hseparator5 = new global::Gtk.HSeparator ();
-		this.hseparator5.Name = "hseparator5";
-		this.vbox3.Add (this.hseparator5);
-		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hseparator5]));
-		w16.Position = 5;
-		w16.Expand = false;
-		w16.Fill = false;
-		// Container child vbox3.Gtk.Box+BoxChild
-		this.hbox5 = new global::Gtk.HBox ();
-		this.hbox5.Name = "hbox5";
-		this.hbox5.Spacing = 6;
-		// Container child hbox5.Gtk.Box+BoxChild
-		this.label9 = new global::Gtk.Label ();
-		this.label9.WidthRequest = 250;
-		this.label9.Name = "label9";
-		this.label9.LabelProp = global::Mono.Unix.Catalog.GetString ("Coffee 2 (minutes)");
-		this.hbox5.Add (this.label9);
-		global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.label9]));
-		w17.Position = 0;
-		w17.Expand = false;
-		w17.Fill = false;
-		// Container child hbox5.Gtk.Box+BoxChild
+		this.table1.Add (this.coffee1TimeInputFieldText);
+		global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.table1 [this.coffee1TimeInputFieldText]));
+		w6.TopAttach = ((uint)(2));
+		w6.BottomAttach = ((uint)(3));
+		w6.LeftAttach = ((uint)(1));
+		w6.RightAttach = ((uint)(2));
+		w6.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table1.Gtk.Table+TableChild
 		this.coffee2TimeInputFieldText = new global::Gtk.Entry ();
 		this.coffee2TimeInputFieldText.CanFocus = true;
 		this.coffee2TimeInputFieldText.Name = "coffee2TimeInputFieldText";
 		this.coffee2TimeInputFieldText.Text = global::Mono.Unix.Catalog.GetString ("0");
 		this.coffee2TimeInputFieldText.IsEditable = true;
 		this.coffee2TimeInputFieldText.InvisibleChar = '●';
-		this.hbox5.Add (this.coffee2TimeInputFieldText);
-		global::Gtk.Box.BoxChild w18 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.coffee2TimeInputFieldText]));
-		w18.Position = 1;
-		this.vbox3.Add (this.hbox5);
-		global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hbox5]));
-		w19.Position = 6;
-		w19.Expand = false;
-		w19.Fill = false;
-		// Container child vbox3.Gtk.Box+BoxChild
-		this.hseparator1 = new global::Gtk.HSeparator ();
-		this.hseparator1.Name = "hseparator1";
-		this.vbox3.Add (this.hseparator1);
-		global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hseparator1]));
-		w20.Position = 7;
-		w20.Expand = false;
-		w20.Fill = false;
-		// Container child vbox3.Gtk.Box+BoxChild
-		this.hbox6 = new global::Gtk.HBox ();
-		this.hbox6.Name = "hbox6";
-		this.hbox6.Spacing = 6;
-		// Container child hbox6.Gtk.Box+BoxChild
+		this.table1.Add (this.coffee2TimeInputFieldText);
+		global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.table1 [this.coffee2TimeInputFieldText]));
+		w7.TopAttach = ((uint)(3));
+		w7.BottomAttach = ((uint)(4));
+		w7.LeftAttach = ((uint)(1));
+		w7.RightAttach = ((uint)(2));
+		w7.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table1.Gtk.Table+TableChild
 		this.label10 = new global::Gtk.Label ();
 		this.label10.WidthRequest = 250;
 		this.label10.Name = "label10";
+		this.label10.Xalign = 1F;
 		this.label10.LabelProp = global::Mono.Unix.Catalog.GetString ("Startup time (minutes)");
-		this.hbox6.Add (this.label10);
-		global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.label10]));
-		w21.Position = 0;
-		w21.Expand = false;
-		w21.Fill = false;
-		// Container child hbox6.Gtk.Box+BoxChild
+		this.table1.Add (this.label10);
+		global::Gtk.Table.TableChild w8 = ((global::Gtk.Table.TableChild)(this.table1 [this.label10]));
+		w8.TopAttach = ((uint)(4));
+		w8.BottomAttach = ((uint)(5));
+		w8.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table1.Gtk.Table+TableChild
+		this.label6 = new global::Gtk.Label ();
+		this.label6.WidthRequest = 210;
+		this.label6.Name = "label6";
+		this.label6.Xalign = 1F;
+		this.label6.LabelProp = global::Mono.Unix.Catalog.GetString ("Working hours");
+		this.label6.Justify = ((global::Gtk.Justification)(2));
+		this.table1.Add (this.label6);
+		global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.table1 [this.label6]));
+		w9.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table1.Gtk.Table+TableChild
+		this.label7 = new global::Gtk.Label ();
+		this.label7.Name = "label7";
+		this.label7.Xalign = 1F;
+		this.label7.LabelProp = global::Mono.Unix.Catalog.GetString ("Lunch Time (minutes)");
+		this.table1.Add (this.label7);
+		global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.table1 [this.label7]));
+		w10.TopAttach = ((uint)(1));
+		w10.BottomAttach = ((uint)(2));
+		w10.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table1.Gtk.Table+TableChild
+		this.label8 = new global::Gtk.Label ();
+		this.label8.Name = "label8";
+		this.label8.Xalign = 1F;
+		this.label8.LabelProp = global::Mono.Unix.Catalog.GetString ("Coffee 1 (minutes)");
+		this.table1.Add (this.label8);
+		global::Gtk.Table.TableChild w11 = ((global::Gtk.Table.TableChild)(this.table1 [this.label8]));
+		w11.TopAttach = ((uint)(2));
+		w11.BottomAttach = ((uint)(3));
+		w11.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table1.Gtk.Table+TableChild
+		this.label9 = new global::Gtk.Label ();
+		this.label9.Name = "label9";
+		this.label9.Xalign = 1F;
+		this.label9.LabelProp = global::Mono.Unix.Catalog.GetString ("Coffee 2 (minutes)");
+		this.table1.Add (this.label9);
+		global::Gtk.Table.TableChild w12 = ((global::Gtk.Table.TableChild)(this.table1 [this.label9]));
+		w12.TopAttach = ((uint)(3));
+		w12.BottomAttach = ((uint)(4));
+		w12.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table1.Gtk.Table+TableChild
+		this.lunchTimeInputFieldText = new global::Gtk.Entry ();
+		this.lunchTimeInputFieldText.CanFocus = true;
+		this.lunchTimeInputFieldText.Name = "lunchTimeInputFieldText";
+		this.lunchTimeInputFieldText.Text = global::Mono.Unix.Catalog.GetString ("45");
+		this.lunchTimeInputFieldText.IsEditable = true;
+		this.lunchTimeInputFieldText.InvisibleChar = '●';
+		this.table1.Add (this.lunchTimeInputFieldText);
+		global::Gtk.Table.TableChild w13 = ((global::Gtk.Table.TableChild)(this.table1 [this.lunchTimeInputFieldText]));
+		w13.TopAttach = ((uint)(1));
+		w13.BottomAttach = ((uint)(2));
+		w13.LeftAttach = ((uint)(1));
+		w13.RightAttach = ((uint)(2));
+		w13.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table1.Gtk.Table+TableChild
 		this.startupTimeInputFieldText = new global::Gtk.Entry ();
 		this.startupTimeInputFieldText.CanFocus = true;
 		this.startupTimeInputFieldText.Name = "startupTimeInputFieldText";
 		this.startupTimeInputFieldText.Text = global::Mono.Unix.Catalog.GetString ("-8");
 		this.startupTimeInputFieldText.IsEditable = true;
 		this.startupTimeInputFieldText.InvisibleChar = '●';
-		this.hbox6.Add (this.startupTimeInputFieldText);
-		global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.startupTimeInputFieldText]));
-		w22.Position = 1;
-		this.vbox3.Add (this.hbox6);
-		global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hbox6]));
-		w23.Position = 8;
-		w23.Expand = false;
-		w23.Fill = false;
-		this.hbox3.Add (this.vbox3);
-		global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.vbox3]));
-		w24.Position = 0;
-		this.vbox1.Add (this.hbox3);
-		global::Gtk.Box.BoxChild w25 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox3]));
-		w25.Position = 3;
-		w25.Expand = false;
-		w25.Fill = false;
-		// Container child vbox1.Gtk.Box+BoxChild
-		this.alignment1 = new global::Gtk.Alignment (0.5F, 0.5F, 1F, 1F);
-		this.alignment1.Name = "alignment1";
-		this.alignment1.LeftPadding = ((uint)(100));
-		this.alignment1.RightPadding = ((uint)(100));
-		this.alignment1.BottomPadding = ((uint)(10));
-		// Container child alignment1.Gtk.Container+ContainerChild
+		this.table1.Add (this.startupTimeInputFieldText);
+		global::Gtk.Table.TableChild w14 = ((global::Gtk.Table.TableChild)(this.table1 [this.startupTimeInputFieldText]));
+		w14.TopAttach = ((uint)(4));
+		w14.BottomAttach = ((uint)(5));
+		w14.LeftAttach = ((uint)(1));
+		w14.RightAttach = ((uint)(2));
+		w14.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table1.Gtk.Table+TableChild
+		this.workTimeInputFieldText = new global::Gtk.Entry ();
+		this.workTimeInputFieldText.CanFocus = true;
+		this.workTimeInputFieldText.Name = "workTimeInputFieldText";
+		this.workTimeInputFieldText.Text = global::Mono.Unix.Catalog.GetString ("8,75");
+		this.workTimeInputFieldText.IsEditable = true;
+		this.workTimeInputFieldText.InvisibleChar = '●';
+		this.table1.Add (this.workTimeInputFieldText);
+		global::Gtk.Table.TableChild w15 = ((global::Gtk.Table.TableChild)(this.table1 [this.workTimeInputFieldText]));
+		w15.LeftAttach = ((uint)(1));
+		w15.RightAttach = ((uint)(2));
+		w15.YOptions = ((global::Gtk.AttachOptions)(4));
+		this.vbox2.Add (this.table1);
+		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.table1]));
+		w16.Position = 1;
+		// Container child vbox2.Gtk.Box+BoxChild
 		this.startStopButton = new global::Gtk.Button ();
 		this.startStopButton.CanFocus = true;
 		this.startStopButton.Name = "startStopButton";
 		this.startStopButton.UseUnderline = true;
 		this.startStopButton.Label = global::Mono.Unix.Catalog.GetString ("StartStopButton");
-		this.alignment1.Add (this.startStopButton);
-		this.vbox1.Add (this.alignment1);
-		global::Gtk.Box.BoxChild w27 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.alignment1]));
-		w27.PackType = ((global::Gtk.PackType)(1));
-		w27.Position = 4;
-		w27.Expand = false;
-		w27.Fill = false;
+		this.vbox2.Add (this.startStopButton);
+		global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.startStopButton]));
+		w17.Position = 2;
+		w17.Expand = false;
+		w17.Fill = false;
+		this.vbox1.Add (this.vbox2);
+		global::Gtk.Box.BoxChild w18 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.vbox2]));
+		w18.Position = 1;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 466;
-		this.DefaultHeight = 351;
+		this.DefaultWidth = 424;
+		this.DefaultHeight = 358;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
+		this.aboutAction.Activated += new global::System.EventHandler (this.OnAbout);
+		this.WorkingHoursPlanAction.Activated += new global::System.EventHandler (this.OnWorkingHoursPlan);
+		this.WorkingHoursPlanAction1.Activated += new global::System.EventHandler (this.OnWorkingHoursPlan);
 		this.workTimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.WorkTimeInputFieldCallback);
-		this.lunchTimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.LunchTimeInputFieldCallback);
-		this.coffee1TimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.Coffee1TimeInputFieldCallback);
-		this.coffee2TimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.Coffee2TimeInputFieldCallback);
 		this.startupTimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.StartupTimeInputFieldCallback);
+		this.lunchTimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.LunchTimeInputFieldCallback);
+		this.coffee2TimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.Coffee2TimeInputFieldCallback);
+		this.coffee1TimeInputFieldText.TextInserted += new global::Gtk.TextInsertedHandler (this.Coffee1TimeInputFieldCallback);
 	}
 }
