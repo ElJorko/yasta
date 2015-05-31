@@ -58,6 +58,18 @@
         <property name="ShortLabel" translatable="yes">Working Hours Plan...</property>
         <signal name="Activated" handler="OnWorkingHoursPlan" />
       </action>
+      <action id="GongAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Gong!</property>
+        <property name="ShortLabel" translatable="yes">Gong!</property>
+        <signal name="Activated" handler="OnGong" />
+      </action>
+      <action id="GongAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Gong!</property>
+        <property name="ShortLabel" translatable="yes">Gong!</property>
+        <signal name="Activated" handler="OnGong" />
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">Yasta</property>
@@ -79,6 +91,7 @@
                 <node type="Menuitem" action="WorkingHoursPlanAction1" />
               </node>
               <node type="Menu" action="HelpAction">
+                <node type="Menuitem" action="GongAction1" />
                 <node type="Menuitem" action="aboutAction" />
               </node>
             </node>

@@ -14,13 +14,16 @@ public partial class MainWindow: Gtk.Window
 	private float coffee2Time;
 	private float startupTime;
 
-
+	System.Media.SoundPlayer soundPlayer;
 
 	bool runTimer = true;
 
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
+
+		System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+		soundPlayer = new System.Media.SoundPlayer(assembly.GetManifestResourceStream("gong"));
 
 		// Initial time
 
@@ -105,6 +108,7 @@ public partial class MainWindow: Gtk.Window
 //			efxSource.clip = dayOverSound;			
 //			//Play the clip.
 //			efxSource.Play ();
+			soundPlayer.Play();
 			runTimer = false;
 			Window freedomWindow = new Window(WindowType.Toplevel);
 			freedomWindow.SetPosition(WindowPosition.Center);
@@ -192,5 +196,10 @@ public partial class MainWindow: Gtk.Window
 		dialog.Run();
 
 		dialog.Destroy();
+	}
+
+	protected void OnGong (object sender, EventArgs e)
+	{
+		soundPlayer.Play();
 	}
 }
